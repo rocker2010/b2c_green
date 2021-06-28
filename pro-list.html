@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<title></title>
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/simple-line-icons/simple-line-icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/skin.css" />
+		<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+		<script src="js/idangerous.swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if lte IE 6]>
+			<script src="js/html5.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="box">
+			<header>
+				<div class="w ">
+					<div class="loglisBox">
+
+						<ul class="loglis fl">
+							<li>
+								<select id="customerlanguage" name="customerlanguage" onchange="setLocation(this.value);">
+									<option value="">Deutsch</option>
+									<option value="">español</option>
+									<option value="">español(España)</option>
+									<option value="">Turkish</option>
+									<option value="">Polish</option>
+									<option value="">Slovak</option>
+									<option value="">Česká republika</option>
+									<option value="">Hungarian</option>
+									<option value="">Romanian</option>
+									<option value="">Lithuania</option>
+									<option value="">Latvia</option>
+									<option value="">Estonia</option>
+									<option value="">English(United Kingdom)</option>
+									<option value="">English</option>
+									<option selected="selected" value="">简体中文</option>
+									<option value="">русский</option>
+								</select>
+							</li>
+							<li>
+								<a href="#" data-toggle="modal" data-target="#peisong"><i class="icon-location-pin f14"></i> Salt lake city</a>
+								<!-- Modal -->
+								<div class="modal fade" id="peisong" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												<h4 class="modal-title" id="myModalLabel"><b><i class="fa fa-truck" aria-hidden="true"></i>Delivery:Please select address</b></h4>
+											</div>
+											<div class="modal-body ovh">
+												<div class="shipping_container">
+													<div class="shipping_select_container">
+														<div class="shipping_container_label">
+															<b> Country </b>&nbsp;
+														</div>
+														<select name="my-select" class="js-my-select" id="select_country">
+															<option selected="selected" value="40">Hungary</option>
+														</select>
+													</div>
+												</div>
+												<div class="province_city_container">
+													<div id="province_city" class="js-my-image">
+														<div class="province_container_label">
+															<b>Province</b>
+														</div>
+														<div class="province_name">
+															<ul id="select_province">
+																<li value="99">
+																	<a href="javascript:void(0)" onclick="provinceClick(99)" class="active">Add test province</a>
+																</li>
+																<li value="93">
+																	<a href="javascript:void(0)" onclick="provinceClick(93)">Budapest</a>
+																</li>
+																<li value="160">
+																	<a href="javascript:void(0)" onclick="provinceClick(160)">HU002的省份</a>
+																</li>
+																<li value="159">
+																	<a href="javascript:void(0)" class="" onclick="provinceClick(159)">Utah</a>
+																</li>
+																<li value="95">
+																	<a href="javascript:void(0)" onclick="provinceClick(95)">Baranya</a>
+																</li>
+																<li value="94">
+																	<a href="javascript:void(0)" onclick="provinceClick(94)">Bács-Kiskun</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div style="clear:both;"></div>
+												<div class="city_container">
+													<div id="city">
+														<div class="province_container_label">
+															<b>City</b>
+														</div>
+														<div class="city_name">
+															<ul id="select_city">
+																<li value="99">
+																	<a href="javascript:void(0)" onclick="provinceClick(99)" class="active">Add test province</a>
+																</li>
+																<li value="93">
+																	<a href="javascript:void(0)" onclick="provinceClick(93)">Budapest</a>
+																</li>
+																<li value="160">
+																	<a href="javascript:void(0)" onclick="provinceClick(160)">HU002的省份</a>
+																</li>
+																<li value="159">
+																	<a href="javascript:void(0)" class="" onclick="provinceClick(159)">Utah</a>
+																</li>
+																<li value="95">
+																	<a href="javascript:void(0)" onclick="provinceClick(95)">Baranya</a>
+																</li>
+																<li value="94">
+																	<a href="javascript:void(0)" onclick="provinceClick(94)">Bács-Kiskun</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<ul class="loglis fr userItem">
+							<li>
+								<a href="#"><i class="icon-user f14"></i> it@tiens.com</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon-logout f14"></i> Login Out</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon-star f14"></i> Inbox</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon-folder f14"></i> (3)</a>
+							</li>
+						</ul>
+						<a class="userMob" data-toggle="modal" data-target="#settings"><i class="icon-settings f16"></i></a>
+						<!-- Modal -->
+						<div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+									</div>
+									<div class="modal-body f12 text-center">
+										<a href="#" class="mr10"><i class="icon-user f14"></i> it@tiens.com</a>
+										<a href="#" class="mr10"><i class="icon-logout f14"></i> Login Out</a>
+										<a href="#" class="mr10"><i class="icon-star f14"></i> Inbox</a>
+										<a href="#"><i class="icon-folder f14"></i> (3)</a>
+									</div>
+									<div class="modal-footer">
+										<form class="form-inline">
+											<div class="form-group">
+												<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+												<div class="input-group">
+													<input type="text" class="form-control" id="exampleInputAmount" placeholder="Search">
+													<a class="input-group-addon"><i class="icon-magnifier f20"></i></a>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w">
+					<a href="#" class="logo"><img src="img/logo.jpg" /></a>
+					<div class="navItems">
+						<ul>
+							<li>
+								<a href="#"><i class="icon-home f14"></i> HOME</a>
+							</li>
+							<li>
+								<a href="#" class="active">NEW ARRIVAL</a>
+								<div class="navItemsLi">
+									<ul>
+										<li>
+											<a href="#">Conjkkjk Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Aldjk Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Bill Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Willj Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Hijkkjk Us Ckdjf</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="#">SHOPPING MALL</a>
+								<div class="navItemsLi">
+									<ul>
+										<li>
+											<a href="#">Conjkkjk Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Aldjk Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Bill Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Willj Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Hijkkjk Us Ckdjf</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="#">NEWS EXPRESS</a>
+								<div class="navItemsLi">
+									<ul>
+										<li>
+											<a href="#">Conjkkjk Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Aldjk Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Bill Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Willj Us Ckdjf</a>
+										</li>
+										<li>
+											<a href="#">Hijkkjk Us Ckdjf</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="#">ABOUT TIENS</a>
+							</li>
+						</ul>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								$('.navItems > ul > li').hover(function() {
+									$(this).find("a").first().addClass("hover");
+									$(this).find('.navItemsLi').slideToggle('fast');
+								}, function() {
+									$(this).find("a").first().removeClass("hover");
+									$(this).find('.navItemsLi').hide()
+								});
+							});
+						</script>
+					</div>
+					<div class="searchMask"><button class="clo">×</button></div>
+					<div class="search">
+						<a href="#" class="rel"><i class="icon-magnifier f14" id="search"></i>
+							<div class="searchMenu" style="display: none;"><input type="text" placeholder="Search"><button class="subM"><i class="icon-magnifier f14"></i></button></div>
+						</a>&nbsp;&nbsp;<span class="cGray">|</span>&nbsp;&nbsp;
+						<a href="#">Hungary</a>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								$('#search,.clo').click(function() {
+									$(".searchMask").fadeToggle('slow');
+									$(".searchMenu").fadeToggle('slow');
+								});
+							});
+						</script>
+					</div>
+					<div class="nav-toggle"><span></span></div>
+					<ul class="top-menu mobile">
+						<li>
+							<a href="/" target="_self">
+								Home
+							</a>
+						</li>
+						<li>
+							<a href="/newproducts" target="_self">
+								new arrival
+							</a>
+						</li>
+						<li>
+							<a target="_self">
+								Shopping Mall
+							</a>
+							<div class="sublist-toggle"></div>
+							<ul class="sublist first-level">
+								<li>
+									<a href="/tis-common-product" target="_self">
+										Common Product
+									</a>
+								</li>
+								<li>
+									<a href="/multiple" target="_self">
+										multiple
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/news" target="_self">
+								News Express
+							</a>
+						</li>
+						<li>
+							<a href="/about-us" target="_self">
+								About TIENS
+							</a>
+						</li>
+					</ul>
+					<script type="text/javascript">
+						//移动端菜单
+						$(document).ready(function() {
+							$('.nav-toggle').click(function() {
+								$(this).toggleClass("active");
+								$(this).siblings('.top-menu.mobile').slideToggle('slow');
+							});
+							$('.top-menu.mobile .sublist-toggle').click(function() {
+								$(this).siblings('.sublist').slideToggle('slow');
+							});
+						});
+					</script>
+				</div>
+			</header>
+			<div class="banner">
+				<a class="arrow-left" href="#"></a>
+				<a class="arrow-right" href="#"></a>
+				<div class="swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="#"><img src="img/banner1.jpg" alt="" style="width: 100%;" /></a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#"><img src="img/banner2.jpg" alt="" style="width: 100%;" /></a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#"><img src="img/banner3.jpg" alt="" style="width: 100%;" /></a>
+						</li>
+					</ul>
+				</div>
+				<div class="pagination"></div>
+			</div>
+		</div>
+		<div class="bigNavBox">
+			<div class="w bigNav" style="padding: 0;">
+				<ul>
+					<li>
+						<img src="img/nav4.jpg" alt="" />
+						<div>
+							<h2>01</h2>
+							<h3>JOIN US</h3>
+							<a href="#">Learn More</a>
+						</div>
+					</li>
+					<li>
+						<img src="img/nav3.jpg" alt="" />
+						<div>
+							<h2>02</h2>
+							<h3>New Products</h3>
+							<a href="#">Learn More</a>
+						</div>
+					</li>
+					<li>
+						<img src="img/nav1.jpg" alt="" />
+						<div>
+							<h2>03</h2>
+							<h3>Sales</h3>
+							<a href="#">Learn More</a>
+						</div>
+					</li>
+					<li>
+						<img src="img/nav2.jpg" alt="" />
+						<div>
+							<h2>04</h2>
+							<h3>Contact Us</h3>
+							<a href="#">Learn More</a>
+						</div>
+					</li>
+				</ul>
+				<div class="content">
+					<span class="titL">About Us</span>
+					<h3>TIENS Group Co. Ltd</h3>
+					<p>TIENS Group Co. Ltd (hereby referred as TIENS Group), founded in 1995 by LI Jinyuan in Tianjin China, began its march into the international market in 1997.</p>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="main" style="text-align: center;">
+				<div class="indexPro">
+					<div class="proLeft">
+						<div class="IndexproBox">
+							<img src="img/pro1.jpg" alt="" />
+							<div class="boxDark">
+								<h1>TIENS lose fat tea</h1>
+								<h2>For high cholesterol in the elderly population</h2>
+								<p>For high cholesterol in the elderly population</p>
+								<a href="#" class="IndexABtn">$ 666.25</a>
+							</div>
+						</div>
+					</div>
+					<div class="proRight">
+						<div class="proTop">
+							<div class="proTopL">
+								<h1 class="title">Featured <span>products</span></h1>
+								<p>Orecare Chinese Herbal Toothpaste </p>
+							</div>
+							<div class="proTopR">
+								<a href="#" class="indexShopCart"><span>10</span></a>
+							</div>
+						</div>
+						<div class="proCenter">
+							<div class="IndexproBox mr20">
+								<img src="img/pro2.jpg" alt="" />
+								<div class="boxDark">
+									<h1>TIENS lose fat tea</h1>
+									<h2>For high cholesterol in the elderly population</h2>
+									<p>For high cholesterol in the elderly population</p>
+									<a href="#" class="IndexABtn">$ 7457.25</a>
+								</div>
+							</div>
+							<div class="IndexproBox">
+								<img src="img/pro2.jpg" alt="" />
+								<div class="boxDark">
+									<h1>TIENS lose fat tea</h1>
+									<h2>For high cholesterol in the elderly population</h2>
+									<p>For high cholesterol in the elderly population</p>
+									<a href="#" class="IndexABtn">$ 666.25</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="box">
+			<footer>
+				<div class="footer-upper">
+					<div class="footer-block information">
+						<div class="title">
+							<strong>Information</strong>
+						</div>
+						<ul class="list">
+							<li>
+								<a href="/sitemap">Sitemap</a>
+							</li>
+							<li>
+								<a href="/shipping-returns">Shipping &amp; returns</a>
+							</li>
+							<li>
+								<a href="/business-opportunity">Business Opportunity</a>
+							</li>
+							<li>
+								<a href="/about-us">About TIENS</a>
+							</li>
+							<li>
+								<a href="/privacy-notice">Privacy notice</a>
+							</li>
+							<li>
+								<a href="/conditions-of-use">Conditions of Use</a>
+							</li>
+							<li>
+								<a href="/contactus">Contact Us</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-block customer-service">
+						<div class="title">
+							<strong>Customer service</strong>
+						</div>
+						<ul class="list">
+							<li>
+								<a href="/search">Search</a>
+							</li>
+							<li>
+								<a href="/news">News</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+							</li>
+							<li>
+								<a href="/digitaldownloads">Help &amp; Downloads</a>
+							</li>
+							<li>
+								<a href="/recentlyviewedproducts">Recently Viewed Products</a>
+							</li>
+							<li>
+								<a href="/newproducts">New Products</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-block my-account">
+						<div class="title">
+							<strong>My account</strong>
+						</div>
+						<ul class="list">
+							<li>
+								<a href="/CustomerInfo">My account</a>
+							</li>
+							<li>
+								<a href="/order/history">My orders</a>
+							</li>
+							<li>
+								<a href="/customer/addresses">Addresses</a>
+							</li>
+							<li>
+								<a href="/cart">Shopping Cart</a>
+							</li>
+							<li>
+								<a href="/wishlist">Wishlist</a>
+							</li>
+							<li>
+								<a href="/vendor/apply">Apply for vendor account</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-block follow-us">
+						<div class="social">
+							<div class="title">
+								<strong>Follow us</strong>
+							</div>
+							<ul class="list">
+								<li class="facebook">
+									<a href="https://www.facebook.com/?stype=lo&amp;jlou=AffgOa65H3tde7eAfoCXYlZOeyMkHKkckGa7kASzDnoUmXOWxx05nbFAho91xzh5aDmrFcyrzSCETQh6fAUlflLhym0umIcHB44PaZfilbdE5A&amp;smuh=35604&amp;lh=Ac-_IXsxzKxvt46-" target="_blank">Facebook</a>
+								</li>
+								<li class="twitter">
+									<a href="https://qzone.qq.com/" target="_blank">Twitter</a>
+								</li>
+								<li class="youtube">
+									<a href="http://v.youku.com/" target="_blank">YouTube</a>
+								</li>
+								<li class="google-plus">
+									<a href="https://www.baidu.com/" target="_blank">Google+</a>
+								</li>
+							</ul>
+						</div>
+						<div class="newsletter">
+							<div class="title">
+								<strong>Newsletter</strong>
+							</div>
+							<div class="newsletter-subscribe" id="newsletter-subscribe-block">
+								<div class="newsletter-email">
+									<input class="newsletter-subscribe-text" id="newsletter-email" name="NewsletterEmail" placeholder="Enter your email here..." type="text" value="">
+									<input type="button" value="Subscribe" id="newsletter-subscribe-button" class="button-1 newsletter-subscribe-button">
+								</div>
+								<div class="newsletter-validation">
+									<span id="subscribe-loading-progress" style="display: none;" class="please-wait">Wait...</span>
+									<span class="field-validation-valid" data-valmsg-for="NewsletterEmail" data-valmsg-replace="true"></span>
+								</div>
+							</div>
+							<div class="newsletter-result" id="newsletter-result-block"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="footer-lower">
+					<div class="footer-info">
+						<span class="footer-disclaimer">
+				            Copyright © 2017 TIENS B2C for Hungary. All rights reserved.
+						</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script>
+			var mySwiper = new Swiper('.swiper-container', {
+				pagination: '.pagination',
+				loop: true,
+				grabCursor: true,
+				autoplay: 3000,
+				autoplayDisableOnInteraction: true
+			})
+			$('.arrow-left').on('click', function(e) {
+				e.preventDefault()
+				mySwiper.swipePrev()
+			})
+			$('.arrow-right').on('click', function(e) {
+				e.preventDefault()
+				mySwiper.swipeNext()
+			})
+		</script>
+	</body>
+
+</html>
